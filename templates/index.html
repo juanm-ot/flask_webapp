@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajo en grupo Producto de Datos</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-style: normal;
+        };
+        
+    </style>
+    
+</head>
+<body>
+</body>
+<body>
+    <h1 style="color:rgb(144, 67, 67)"><i>Grupo 15, integrantes:</i><h1>
+    <ul>
+    {% for member in members %}
+        <li style="font-size: 20px;">{{ member }}</li>
+    {% endfor %}
+    </ul>
+    <h2 style="color:rgb(144, 67, 67)">Contexto del negocio</h2>
+    <p style="font-size: 20px;">Aplicación de comercio social cuyo objetivo es traer a la contemporaneidad la forma más primitiva de comercio: el trueque.  Permitiendo a los usuarios desbloquear riqueza a partir de los objetos que tienen o habilidades que poseen y crear comunidades de cooperación a partir de un vínculo transaccional. Su comunidad está comprometida firmemente con proteger al medio ambiente y disminuir la frenética explotación de recursos naturales. Reutilizar en lugar de producir más cosas desde cero ayuda a este propósito. 
+        <br>
+        <br>
+        La aplicación permite a los usuarios interactuar a partir de tres verticales: trueques, compras y ventas a través de la dinámica de ofertas. Un usuario envia una oferta de dinero o de item por el item de otro usuario, y este decide libremente si la acepta, la rechaza o hace una contraoferta; una vez el proceso de negociación culmina, ambos usuarios se encargan de realizar la transacción, notificar en la app el proceso y dejar un reseña sobre su experiencia transaccional que permita formar comunidades seguras. </p>
+    <img src="{{ url_for('static', filename='gif_esquema_nombres.gif') }}" alt="Texto alternativo1" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+    
+    <img src="{{ url_for('static', filename='gif_esquema_usuarios.gif') }}" alt="Texto alternativo2" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+    <p style="font-size: 20px;"><b>Pregunta del negocio :</b>¿Como aumentar la cantidad de intercambios por usuario? ¿Como lograr aumentar el tráfico de ofertas de items?<p>
+    <p style="font-size: 20px;"><b>Pregunta analítica :</b>¿Cual es la probabilidad de que una oferta sea aceptada?
+        <br>
+        <br>
+        <p>
+    
+    <form action="/pagina2" method="POST">
+        <label for="opciones"><h2 style="color:rgb(144, 67, 67)">Navegación en la página:<h2></label>
+        <select id="opciones" name="opcion" style="font-size: 20px;">
+            <option value="Modelar para clasificar">Modelar para clasificar</option>
+            <option value="Regresión Logística">Regresión Logística</option>
+            <option value="Proceso de modelado">Proceso de modelado</option>
+            <option value="Predicción - Clasificación">Predicción - Clasificación</option>
+        </select>
+        <input type="submit" value="IR" style="font-size: 20px;">
+    </form>
+</body>
+</html>

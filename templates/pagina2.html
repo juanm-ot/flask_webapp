@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Página siguiente</title>
+</head>
+<body>
+    {% if seccion == secciones["Modelar para clasificar"] %}
+        <h1 style="color:rgb(144, 67, 67)">{{seccion}}</h1>
+        <p style="font-size: 20px;">Para aumentar la cantidad de transacciones, primero debe ocurrir un escenario complementario para la oferta y la demanda; esta relacion tiene que empezar por la manifestación del interes, a traves del envio de ofertas.
+            <br>
+            <br>
+            Una transaccion tiene lugar cuando un usuario interesado -demanda-  envia una oferta de trueque,  es decir, envia una propuesta de un item al usuario con el item de interes  -oferta- . Este ultimo deberá aceptarla para iniciar el trueque, es posible que surja una negociación previo a la aceptación de la oferta.
+            <br> 
+            <br>
+            Ahora bien, guiados por la pregunta analitica nuestro interes es predecir si un usuario aceptará una oferta de trueque. Para esto clasificaremos por usuarios, a partir de una variables predictoras, si para un dia especifico el usuarios aceptara o no una oferta de trueque. 
+            <p>
+        <div style="text-align: center;">
+            <img src="{{ url_for('static', filename='modelar_clasific.jfif') }}" alt="modelar para clasificar" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+        </div>
+    
+    
+    {% elif seccion == secciones["Regresión Logística"] %}
+        <h1 style="color:rgb(144, 67, 67)">{{seccion}}</h1>
+        <p style="font-size: 20px;">La regresión logística es un método de análisis estadístico que se utiliza comúnmente en la modelización de datos binarios o de variables dependientes categóricas. Se utiliza para predecir la probabilidad de que una observación pertenezca a una de dos categorías, y es especialmente útil cuando se trata de datos que no siguen una distribución normal o cuando la relación entre las variables independientes y la variable dependiente no es lineal.
+         </p>
+         <div style="text-align: center;">
+         <img src="{{ url_for('static', filename='regresion_logist_1.jpeg') }}" alt="Datos no balanceados" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+        </div>
+         
+    {% elif seccion == secciones["Proceso de modelado"] %}
+    <h1 style="color:rgb(144, 67, 67)">{{seccion}}</h1>
+    <p style="font-size: 20px;">•
+        Durante el proceso de transformación, se halló un desbalance en los datos de insumo para el entrenamiento, es decir, una gran cantidad de datos de registros correspondientes a no interacciones con ofertas.  Por esta razón, se aplica una función para sacar solo una porción de los datos negativos(0 - no interaccion) que tenga una relacion 90:10 respecto a los datos con interacciones positivas.
+        <br>
+        <br>
+        <p>
+            <img src="{{ url_for('static', filename='graph_nonbalance.png') }}" alt="Datos no balanceados" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+    
+            <img src="{{ url_for('static', filename='graph_balance.png') }}" alt="Datos balanceados" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+    <p style="font-size: 20px;">•
+        Para entrenar el modelo se filtraron datos de tipo numérico y se uso una función SelectKBest con K=2 para elegir los mejores valores de acuerdo a la prueba del Chi2.
+        <br>
+        <p>
+    <h2 style="color:rgb(144, 67, 67)"><b>Reportes sobre la porción de entrenamiento </b>
+    <h2>
+        <br>
+        <p>
+    <img src="{{ url_for('static', filename='reportes_entrenamiento.jpg') }}" alt="reportes sobre la porcion de entrenamiento" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">        
+    <h2 style="color:rgb(144, 67, 67)"><b>Reportes sobre la porción de evaluación</b></h2>
+    <br>
+    <img src="{{ url_for('static', filename='reportes_evaluacion.jpg') }}" alt="reportes sobre la porcion de entrenamiento" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+    <br>       
+    <h2 style="color:rgb(144, 67, 67)">Matriz de confusión</h2>
+    <p style="font-size: 20px;">Una matriz de confusión es una tabla que se utiliza para evaluar el desempeño de un modelo de clasificación en un conjunto de datos.
+        <br>
+        La matriz de confusión tiene una estructura cuadrada con el mismo número de filas y columnas. En el caso de una clasificación binaria, como sí/no o positivo/negativo, la matriz de confusión tiene cuatro celdas: Verdaderos Positivos (VP), Falsos Positivos (FP), Falsos Negativos (FN) y Verdaderos Negativos (VN).
+        <br>
+        <br>
+        • Verdaderos Positivos (VP): el modelo predice correctamente la clase positiva.
+        <br>
+        <br>
+        • Falsos Positivos (FP): el modelo predice incorrectamente la clase positiva.
+        <br>
+        <br>
+        • Falsos Negativos (FN): el modelo predice incorrectamente la clase negativa.
+        <br>
+        <br>
+        • Verdaderos Negativos (VN): el modelo predice correctamente la clase negativa.
+        <br>
+        <br>
+        La importancia de la matriz de confusión radica en que permite evaluar la precisión y el rendimiento de un modelo de clasificación. A partir de los valores en la matriz de confusión, se pueden calcular varias métricas, como la precisión, la sensibilidad, la especificidad y la tasa de error, que ayudan a entender cómo de bien está funcionando el modelo.
+        <br>
+        <br>
+        La matriz de confusión es una herramienta importante para evaluar el rendimiento de un modelo de clasificación y para identificar las áreas en las que se puede mejorar el modelo.
+         <p>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='matriz_confusion.jpeg') }}" alt="Matriz de confusión" style="width: 600px; height: auto;margin-left: 10px;margin-right: 100px;">
+    </div>
+        {% elif seccion == secciones["Predicción - Clasificación"] %}
+        <h1 style="color:rgb(144, 67, 67)">{{seccion}}</h1>
+        <p style="font-size: 20px;">Según el histórico de interacciones de los usuarios, y una vez implementado el modelo, para el 16 de septiembre de 2023 se estima que 3.511 usuarios acepten ofertas y 33.899 usuarios rechazan o no interactuan con las que les hayan enviado.
+        </p>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='bar_prediction.png') }}" alt="Matriz de confusión" style="width: 800px; height: auto;margin-left: 10px;margin-right: 100px;">
+    </div>
+        {% else %}
+    <h1 style="color:rgb(144, 67, 67)">Selecciona una opción en la página anterior.<h1>
+    {% endif %}
+</body>
+</html>
+
